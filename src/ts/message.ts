@@ -1,15 +1,10 @@
 class Message {
-  constructor(text: string, isQuestion: boolean) {
+  private is_question_: boolean;
+  private text_: string;
+
+  constructor(text: string, is_question: boolean) {
     this.text_ = text;
-    this.is_question_ = isQuestion;
-  }
-
-  public GetText(): string {
-    return this.text_;
-  }
-
-  public IsQuestion(): boolean {
-    return this.is_question_;
+    this.is_question_ = is_question;
   }
 
   public BuildMessage(): HTMLElement {
@@ -69,8 +64,13 @@ class Message {
     return messageContainer;
   }
 
-  private text_: string;
-  private is_question_: boolean;
+  public GetText(): string {
+    return this.text_;
+  }
+
+  public IsQuestion(): boolean {
+    return this.is_question_;
+  }
 }
 
 export { Message };
