@@ -26,7 +26,7 @@ class Message {
 
     let role_message = document.createElement("div");
     role_message.setAttribute("class", "role-message p-1 text-white font-bold");
-    role_message.innerHTML = this.is_question_ ? "Tú" : "Chatull";
+    role_message.textContent = this.is_question_ ? "Tú" : "Chatull";
 
     let message = document.createElement("div");
     if (this.is_question_) {
@@ -58,7 +58,7 @@ class Message {
     role_container.appendChild(photo);
     let messageText = document.createElement("div");
     messageText.setAttribute("class", "message text-white rounded-lg");
-    messageText.innerHTML = this.text_;
+    messageText.textContent = this.text_;
     message.appendChild(messageText);
     messageContainer.appendChild(message);
     return messageContainer;
