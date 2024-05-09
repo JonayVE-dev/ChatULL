@@ -58,7 +58,11 @@ class Message {
     role_container.appendChild(photo);
     let messageText = document.createElement("div");
     messageText.setAttribute("class", "message text-white rounded-lg");
-    messageText.innerHTML = this.text_;
+    if (this.is_question_) {
+      messageText.textContent = this.text_;
+    } else {
+      messageText.innerHTML = this.text_;
+    }
     message.appendChild(messageText);
     messageContainer.appendChild(message);
     return messageContainer;
